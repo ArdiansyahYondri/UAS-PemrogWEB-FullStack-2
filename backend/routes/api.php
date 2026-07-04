@@ -7,6 +7,8 @@ use App\Http\Controllers\API\KelasController;
 use App\Http\Controllers\API\MateriController;
 use App\Http\Controllers\API\AnggotaKelasController;
 use App\Http\Controllers\API\UjianController;
+use App\Http\Controllers\API\SoalController;
+use App\Http\Controllers\API\HasilUjianController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -23,4 +25,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('materi', MateriController::class);
     Route::apiResource('anggota', AnggotaKelasController::class);
     Route::apiResource('ujian', UjianController::class);
+    Route::apiResource('soal', SoalController::class);
+    Route::apiResource('hasil-ujian', HasilUjianController::class);
 });

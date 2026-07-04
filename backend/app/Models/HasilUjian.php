@@ -2,12 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class HasilUjian extends Model
 {
+    use HasFactory;
+
     protected $table = 'hasil_ujian';
-    protected $fillable = ['ujian_id', 'siswa_id', 'skor', 'waktu_selesai'];
+
+    protected $fillable = [
+        'ujian_id',
+        'siswa_id',
+        'skor',
+        'waktu_selesai'
+    ];
 
     public function ujian()
     {
