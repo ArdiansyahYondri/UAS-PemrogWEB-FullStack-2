@@ -28,9 +28,9 @@ class UjianController extends Controller
     {
         $request->validate([
             'kelas_id' => 'required|exists:kelas,id',
-            'judul' => 'required|string|max:255',
+            'judul_ujian' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            // Jika di database kamu ada kolom durasi atau waktu, bisa ditambahkan validasinya di sini nanti
+            'durasi_menit' => 'required|integer',
         ]);
 
         $ujian = Ujian::create($request->all());
@@ -66,11 +66,12 @@ class UjianController extends Controller
         }
 
         $request->validate([
-            'judul' => 'sometimes|required|string|max:255',
+            'judul_ujian' => 'sometimes|required|string|max:255',
             'deskripsi' => 'nullable|string',
+            'durasi_menit' => 'sometimes|required|integer',
         ]);
 
-        $ujian->update($request->only(['judul', 'deskripsi']));
+        $ujian->update($request->only(['judul_ujian', 'deskripsi', 'durasi_menit']));
 
         return response()->json([
             'message' => 'Ujian berhasil diperbarui',
