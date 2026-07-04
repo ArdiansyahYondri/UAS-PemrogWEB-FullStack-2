@@ -8,7 +8,7 @@ use App\Http\Controllers\API\KelasController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// Rute yang dilindungi (harus membawa token dari proses login)
+// Rute yang dilindungi (wajib login)
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     
@@ -16,5 +16,5 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
     
-    // Nanti rute untuk kelas, materi, dan ujian akan kita taruh di dalam blok ini
+    Route::apiResource('kelas', KelasController::class);
 });
