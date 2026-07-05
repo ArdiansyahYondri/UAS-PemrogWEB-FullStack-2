@@ -8,8 +8,11 @@ Tolong baca panduan ini pelan-pelan dari awal sampai akhir sebelum mulai menyent
 
 Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikasi Vue kita nanti bisa mengambil data dari database.
 
-1. Buka aplikasi XAMPP atau Laragon dan sejenisnya, lalu klik Start pada Apache dan MySQL.
-2. Buka browser, ketik `localhost/phpmyadmin`. Buat database baru dan beri nama `e-learning`.
+1. Buka aplikasi XAMPP (klik Start pada Apache dan MySQL) atau buka Laragon (klik Start All).
+2. Buat database baru dengan nama `e-learning`.
+   - Pengguna XAMPP: Buka browser dan ketik `localhost/phpmyadmin`.
+   - Pengguna Laragon: Klik kanan pada aplikasi Laragon, pilih menu **MySQL**, lalu klik **phpMyAdmin**.
+   - Setelah phpMyAdmin terbuka, buat database baru di sana.
 3. Buka terminal, cari folder tempat kalian biasa menyimpan tugas, lalu jalankan perintah ini untuk mengambil kode dari GitHub:
    `git clone https://github.com/ArdiansyahYondri/UAS-PemrogWEB-FullStack-2.git`
 4. Masuk ke dalam folder hasil download tersebut:
@@ -32,11 +35,13 @@ Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikas
 
    DB_PASSWORD=
 
-8. Kembali ke terminal tadi, ketik tiga perintah ini satu per satu:
+8. Kembali ke terminal tadi, ketik empat perintah ini satu per satu:
    `php artisan key:generate`
    `php artisan migrate`
+   `php artisan db:seed`
    `php artisan serve`
-   _(PENTING: Jangan tutup terminal ini selama kalian sedang mengerjakan frontend Vue)._
+
+_(Keterangan: Perintah db:seed di atas otomatis membuatkan 3 akun dan 1 kelas untuk kalian tes di Postman. Email yang bisa dipakai: admin@kejar.study, guru@kejar.study, dan nyahu@kejar.study dengan password: password123. PENTING: Jangan tutup terminal ini selama kalian sedang mengerjakan frontend Vue)._
 
 ## 💻 TAHAP 2: Menyalakan Frontend (Vue.js)
 
@@ -66,10 +71,10 @@ Branch utama kita (`main`) sudah dikunci oleh Ardi untuk mencegah kode bentrok. 
 
 ## 💡 TAHAP 4: Trik Jalan Pintas (Kerja Tanpa Menunggu Fitur Login)
 
-Karena halaman Login masih dibuat oleh Tim ke 1, gunakan cara ini agar sistem mengira kalian sudah login:
+Karena halaman Login masih dibuat oleh Tim 1, gunakan cara ini agar sistem mengira kalian sudah login:
 
 1. Buka aplikasi Postman atau Thunder Client.
-2. Buat request POST ke alamat `http://127.0.0.1:8000/api/login`. Masukkan email dan password sembarang yang ada di database kalian.
+2. Buat request POST ke alamat `http://127.0.0.1:8000/api/login`. Masukkan email dummy dan password yang ada di keterangan Tahap 1.
 3. Saat berhasil, akan muncul teks panjang bernama `token`. Copy teks tersebut.
 4. Buka halaman Vue kalian di browser.
 5. Klik kanan di layar browser, lalu pilih Inspect (atau Inspect Element).

@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
         Kelas::create([
             'guru_id' => $guru->id,
             'nama_kelas' => 'Pemrograman Web Fullstack',
-            'deskripsi' => 'Kelas dasar pembuatan aplikasi web menggunakan Laravel dan React.',
+            'deskripsi' => 'Kelas dasar pembuatan aplikasi web menggunakan Laravel dan Vue.',
         ]);
     }
 }
