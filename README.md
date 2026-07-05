@@ -36,9 +36,13 @@ Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikas
    DB_PASSWORD=
 
 8. Kembali ke terminal tadi, ketik empat perintah ini satu per satu:
+
    `php artisan key:generate`
+
    `php artisan migrate`
+
    `php artisan db:seed`
+
    `php artisan serve`
 
 _(Keterangan: Perintah db:seed di atas otomatis membuatkan 3 akun dan 1 kelas untuk kalian tes di Postman. Email yang bisa dipakai: admin@kejar.study, guru@kejar.study, dan nyahu@kejar.study dengan password: password123. PENTING: Jangan tutup terminal ini selama kalian sedang mengerjakan frontend Vue)._
