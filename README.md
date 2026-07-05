@@ -19,12 +19,19 @@ Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikas
 6. Install semua kebutuhan sistem Laravel:
    `composer install`
 7. Copy file bernama `.env.example` lalu paste dan ubah namanya menjadi `.env`. Buka file `.env` tersebut, cari bagian database, lalu ubah menjadi seperti ini:
+
    DB_CONNECTION=mysql
+
    DB_HOST=127.0.0.1
+
    DB_PORT=3306
+
    DB_DATABASE=e-learning
+
    DB_USERNAME=root
+
    DB_PASSWORD=
+
 8. Kembali ke terminal tadi, ketik tiga perintah ini satu per satu:
    `php artisan key:generate`
    `php artisan migrate`
