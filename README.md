@@ -10,8 +10,8 @@ Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikas
 
 1. Buka aplikasi XAMPP (klik Start pada Apache dan MySQL) atau buka Laragon (klik Start All).
 2. Buat database baru dengan nama `e-learning`.
-   - Pengguna XAMPP: Buka browser dan ketik `localhost/phpmyadmin`.
-   - Pengguna Laragon: Klik kanan pada aplikasi Laragon, pilih menu **MySQL**, lalu klik **phpMyAdmin**.
+   - **Pengguna XAMPP:** Buka browser dan ketik `localhost/phpmyadmin`.
+   - **Pengguna Laragon:** Klik kanan pada aplikasi Laragon, pilih menu **MySQL**, lalu klik **phpMyAdmin**.
    - Setelah phpMyAdmin terbuka, buat database baru di sana.
 3. Buka terminal, cari folder tempat kalian biasa menyimpan tugas, lalu jalankan perintah ini untuk mengambil kode dari GitHub:
    `git clone https://github.com/ArdiansyahYondri/UAS-PemrogWEB-FullStack-2.git`
