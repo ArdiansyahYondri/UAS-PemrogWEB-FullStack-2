@@ -1,12 +1,12 @@
 # 🚀 PANDUAN KERJA TIM FRONTEND: PROJECT KEJAR
 
-Semua fondasi aplikasi KeJar (arsitektur folder Vue, jembatan API, dan Backend) sudah siap 100%. Kita sekarang bisa mulai coding secara bersamaan tanpa harus saling tunggu.
+Semua fondasi aplikasi KeJar (arsitektur folder React dan Tailwind, jembatan API, dan Backend) sudah siap 100%. Kita sekarang bisa mulai coding secara bersamaan tanpa harus saling tunggu.
 
 Tolong baca panduan ini pelan-pelan dari awal sampai akhir sebelum mulai menyentuh kode ya.
 
 ## 🛠️ TAHAP 1: Menyalakan Backend (Laravel)
 
-Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikasi Vue kita nanti bisa mengambil data dari database.
+Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikasi React kita nanti bisa mengambil data dari database.
 
 1. Buka aplikasi XAMPP (klik Start pada Apache dan MySQL) atau buka Laragon (klik Start All).
 2. Buat database baru dengan nama `e-learning`.
@@ -45,16 +45,16 @@ Kalian wajib menyalakan mesin backend ini di laptop masing-masing supaya aplikas
 
    `php artisan serve`
 
-_(Keterangan: Perintah db:seed di atas otomatis membuatkan 3 akun dan 1 kelas untuk kalian tes di Postman. Email yang bisa dipakai: admin@kejar.study, guru@kejar.study, dan nyahu@kejar.study dengan password: password123. PENTING: Jangan tutup terminal ini selama kalian sedang mengerjakan frontend Vue)._
+_(Keterangan: Perintah db:seed di atas otomatis membuatkan 3 akun dan 1 kelas untuk kalian tes di Postman. Email yang bisa dipakai: admin@kejar.study, guru@kejar.study, dan nyahu@kejar.study dengan password: password123. PENTING: Jangan tutup terminal ini selama kalian sedang mengerjakan frontend React)._
 
-## 💻 TAHAP 2: Menyalakan Frontend (Vue.js)
+## 💻 TAHAP 2: Menyalakan Frontend (React.js)
 
 1. Biarkan terminal backend tadi tetap jalan. Sekarang buka tab terminal BARU di VS Code kalian.
 2. Pastikan posisi kalian ada di folder utama (`UAS-PemrogWEB-FullStack-2`), lalu masuk ke folder frontend:
    `cd frontend`
-3. Install semua kebutuhan sistem Vue:
+3. Install semua kebutuhan sistem React:
    `npm install`
-4. Nyalakan server Vue kalian:
+4. Nyalakan server React kalian:
    `npm run dev`
 5. Buka browser dan ketik alamat yang muncul (biasanya `http://localhost:5173`).
 
@@ -80,7 +80,7 @@ Karena halaman Login masih dibuat oleh Tim 1, gunakan cara ini agar sistem mengi
 1. Buka aplikasi Postman atau Thunder Client.
 2. Buat request POST ke alamat `http://127.0.0.1:8000/api/login`. Masukkan email dummy dan password yang ada di keterangan Tahap 1.
 3. Saat berhasil, akan muncul teks panjang bernama `token`. Copy teks tersebut.
-4. Buka halaman Vue kalian di browser.
+4. Buka halaman React kalian di browser.
 5. Klik kanan di layar browser, lalu pilih Inspect (atau Inspect Element).
 6. Cari tab bernama Application (atau Storage).
 7. Di menu sebelah kiri, cari dan klik Local Storage, lalu klik nama website kita.
