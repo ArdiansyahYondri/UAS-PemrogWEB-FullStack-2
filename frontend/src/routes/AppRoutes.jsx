@@ -1,47 +1,126 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-// Import folder auth
-import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
+import Login from "../Page/auth/Login";
+import Register from "../Page/auth/Register";
+import DashboardAdmin from "../Page/admin/DashboardAdmin";
+import KelolaPengguna from "../Page/admin/KelolaPengguna";
+import DashboardGuru from "../Page/guru/DashboardGuru";
+import DetailKelas from "../Page/guru/DetailKelas";
+import DaftarUjian from "../Page/guru/DaftarUjian";
+import BuatSoal from "../Page/guru/BuatSoal";
+import RekapNilai from "../Page/guru/RekapNilai";
+import DashboardSiswa from "../Page/siswa/DashboardSiswa";
+import RuangKelas from "../Page/siswa/RuangKelas";
+import BacaMateri from "../Page/siswa/BacaMateri";
+import KerjakanUjian from "../Page/siswa/KerjakanUjian";
 
-// Import folder admin
-import DashboardAdmin from "../pages/admin/DashboardAdmin";
-import KelolaPengguna from "../pages/admin/KelolaPengguna";
-
-// Import folder guru
-import DashboardGuru from "../pages/guru/DashboardGuru";
-import DetailKelas from "../pages/guru/DetailKelas";
-import DaftarUjian from "../pages/guru/DaftarUjian";
-import BuatSoal from "../pages/guru/BuatSoal";
-import RekapNilai from "../pages/guru/RekapNilai";
-
-// Import folder siswa
-import DashboardSiswa from "../pages/siswa/DashboardSiswa";
-import RuangKelas from "../pages/siswa/RuangKelas";
-import BacaMateri from "../pages/siswa/BacaMateri";
-import KerjakanUjian from "../pages/siswa/KerjakanUjian";
+// Komponen Pembungkus Satpam Keamanan
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+};
 
 export const AppRoutes = () => (
   <Routes>
-    {/* Rute Auth */}
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
+    <Route path="/" element={<Navigate to="/login" replace />} />
 
-    {/* Rute Admin */}
-    <Route path="/admin/dashboard" element={<DashboardAdmin />} />
-    <Route path="/admin/pengguna" element={<KelolaPengguna />} />
+    {/* Admin */}
+    <Route
+      path="/admin/dashboard"
+      element={
+        <ProtectedRoute>
+          <DashboardAdmin />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/admin/pengguna"
+      element={
+        <ProtectedRoute>
+          <KelolaPengguna />
+        </ProtectedRoute>
+      }
+    />
 
-    {/* Rute Guru */}
-    <Route path="/guru/dashboard" element={<DashboardGuru />} />
-    <Route path="/guru/kelas/:id" element={<DetailKelas />} />
-    <Route path="/guru/ujian" element={<DaftarUjian />} />
-    <Route path="/guru/ujian/soal" element={<BuatSoal />} />
-    <Route path="/guru/ujian/rekap" element={<RekapNilai />} />
+    {/* Guru */}
+    <Route
+      path="/guru/dashboard"
+      element={
+        <ProtectedRoute>
+          <DashboardGuru />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/guru/kelas/:id"
+      element={
+        <ProtectedRoute>
+          <DetailKelas />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/guru/ujian"
+      element={
+        <ProtectedRoute>
+          <DaftarUjian />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/guru/ujian/soal"
+      element={
+        <ProtectedRoute>
+          <BuatSoal />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/guru/ujian/rekap"
+      element={
+        <ProtectedRoute>
+          <RekapNilai />
+        </ProtectedRoute>
+      }
+    />
 
-    {/* Rute Siswa */}
-    <Route path="/siswa/dashboard" element={<DashboardSiswa />} />
-    <Route path="/siswa/kelas/:id" element={<RuangKelas />} />
-    <Route path="/siswa/materi/:id" element={<BacaMateri />} />
-    <Route path="/siswa/ujian/:id" element={<KerjakanUjian />} />
+    {/* Siswa */}
+    <Route
+      path="/siswa/dashboard"
+      element={
+        <ProtectedRoute>
+          <DashboardSiswa />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/siswa/kelas/:id"
+      element={
+        <ProtectedRoute>
+          <RuangKelas />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/siswa/materi/:id"
+      element={
+        <ProtectedRoute>
+          <BacaMateri />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/siswa/ujian/:id"
+      element={
+        <ProtectedRoute>
+          <KerjakanUjian />
+        </ProtectedRoute>
+      }
+    />
   </Routes>
 );
