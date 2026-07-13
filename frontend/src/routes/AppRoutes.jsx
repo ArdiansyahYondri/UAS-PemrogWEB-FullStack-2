@@ -1,18 +1,18 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
-import DashboardAdmin from "../pages/admin/DashboardAdmin";
-import KelolaPengguna from "../pages/admin/KelolaPengguna";
-import DashboardGuru from "../pages/guru/DashboardGuru";
-import DetailKelas from "../pages/guru/DetailKelas";
-import DaftarUjian from "../pages/guru/DaftarUjian";
-import BuatSoal from "../pages/guru/BuatSoal";
-import RekapNilai from "../pages/guru/RekapNilai";
-import DashboardSiswa from "../pages/siswa/DashboardSiswa";
-import RuangKelas from "../pages/siswa/RuangKelas";
-import BacaMateri from "../pages/siswa/BacaMateri";
-import KerjakanUjian from "../pages/siswa/KerjakanUjian";
+import Login from "../Page/auth/Login";
+import Register from "../Page/auth/Register";
+import DashboardAdmin from "../Page/admin/DashboardAdmin";
+import KelolaPengguna from "../Page/admin/KelolaPengguna";
+import DashboardGuru from "../Page/guru/DashboardGuru";
+import DetailKelas from "../Page/guru/DetailKelas";
+import DaftarUjian from "../Page/guru/DaftarUjian";
+import BuatSoal from "../Page/guru/BuatSoal";
+import RekapNilai from "../Page/guru/RekapNilai";
+import DashboardSiswa from "../Page/siswa/DashboardSiswa";
+import RuangKelas from "../Page/siswa/RuangKelas";
+import BacaMateri from "../Page/siswa/BacaMateri";
+import KerjakanUjian from "../Page/siswa/KerjakanUjian";
 
 // Komponen Pembungkus Satpam Keamanan
 const ProtectedRoute = ({ children }) => {
